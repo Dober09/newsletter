@@ -1,5 +1,6 @@
 import { data } from "../data"
 import dot from "../assets/images/icon-list.svg"
+import  "./Section.css"
 export default function Section(){
     const listOfInfo = data.map(item=>(
         <div className="list" key={item.id}>
