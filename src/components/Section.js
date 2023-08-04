@@ -5,7 +5,7 @@ export default function Section(){
     const listOfInfo = data.map(item=>(
         <div className="list" key={item.id}>
             <div className="dot"><img src={dot} alt="dot" /></div>
-            <div className="list">{item.msg}</div>
+            <div className="msg">{item.msg}</div>
         </div>
     ))
     return(
