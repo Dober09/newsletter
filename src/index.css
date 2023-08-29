@@ -18,4 +18,13 @@
     .box div p{
         width: 300px;
     }
+
+    @media screen  and (min-width:1440px){
+        body{
+            background-color: hsl(235, 18%, 26%);
+        }
+        .box div p{
+            width: 320px;
+        }
+    }
 }

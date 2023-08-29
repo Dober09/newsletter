@@ -1,27 +1,30 @@
-import banner from '../assets/illustration-sign-up-mobile.svg';
+import mobileimg from '../assets/illustration-sign-up-mobile.svg';
+import desktopimg from '../assets/illustration-sign-up-desktop.svg'
 import check from '../assets/icon-success.svg';
 export default function Section(){
+    
     return (
         <section className='flex justify-center font-roboto  ' >
-            <div className='md:flex'>
+            <div className='md:flex md:items-center md:justify-between md:bg-white rounded-md  md:w-2/4 md:my-10 md:p-4'>
             <div className='order-2'>
-                <img src={banner} alt="mobile-signup"  className='w-80 ml-4' />
+                <img src={mobileimg} alt="mobile-signup"  className='w-80 ml-4 md:hidden' />
+                <img src={desktopimg} alt="desktop-signup"  className=' hidden md:block md:h-3/4 md:w-72' />
             </div>
-            <div className='  w-72 mx-auto'>
+            <div className='  w-72 mx-auto md:mr-32 '>
             <div className='  pt-5 pl-3'>
-                <div >
+                <div className='md:text-center'>
                     <h1 className='text-4xl font-bold text-charcoalgray'>Stay updated!</h1>
                 </div>
                 <div className='w-80  mt-2'>
                     <p>Join 60,000+ product managers reciving monthly updates on:</p>
                 </div>
             </div>
-            <div className='w-80 ml-3 mt-4'>
+            <div className='w-80 ml-3 mt-4 md:w-96 '>
                 <div className='box'>
                     <div>
                         <img src={check} alt="tick" />
                     </div>
-                    <div className='w-72'>
+                    <div className='w-72 md:mr-16'>
                         <p>Product discovery and building what matters</p>
                     </div>
                 </div>
@@ -29,15 +32,15 @@ export default function Section(){
                     <div >
                         <img src={check} alt="tick" />
                     </div>
-                    <div className='w-72'>
-                        <p>Measuring to ensure updates are a success</p>
+                    <div className='w-72 md:mr-16'>
+                        <p >Measuring to ensure updates are a success</p>
                     </div>
                 </div>
                 <div className='box'>
                     <div>
                         <img src={check} alt="tick" />
                     </div>
-                    <div className='w-72 '>
+                    <div className='w-72  md:mr-16'>
                         <p>And much more!</p>
                     </div>
                 </div>
