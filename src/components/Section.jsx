@@ -1,8 +1,27 @@
 import mobileimg from '../assets/illustration-sign-up-mobile.svg';
 import desktopimg from '../assets/illustration-sign-up-desktop.svg'
 import check from '../assets/icon-success.svg';
+import { useState } from 'react';
+import Success from './Success';
 export default function Section(){
+    const [emails,setEmails] = useState(null);
+
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        const email = document.querySelector('#email')
+        const label = document.querySelector(".error")
+        
+        
+        if(!email.value.includes("@") || !email.value.includes(".")){
     
+           label.classList.add('errormsg')
+           email.classList.add('errorinput')
+           console.log("hello")
+        }else{
+            setEmails(email.value)
+            return <Success email={emails}/>;
+        }
+    }   
     return (
         <section className='flex justify-center font-roboto  ' >
             <div className='md:flex md:items-center md:justify-between md:bg-white rounded-md  md:w-2/4 md:my-10 md:p-4'>
@@ -46,17 +65,25 @@ export default function Section(){
                 </div>
             </div>
             <div className='ml-3 mt-4 w-72'>
-                <form>
+                <form onSubmit={handleSubmit}>
+                    <div className='text-sm flex justify-between '>
+
                     <label 
-                    className='font-bold  text-sm'>Email address</label>
+                    className='font-bold  '>Email address</label>
+                    <label className="error text-red-700 font-ubuntu hidden" > Valid email required</label>
+                    </div>
                     <input
                     className="block rounded-md border mt-1 border-gray w-72 p-2" 
-                    type="email" 
+                    type="text" 
                     placeholder='email@company.com'
+                    id='email'
                     />
                     <button
-                     className="block border-none bg-charcoalgray p-2 rounded-md mt-4 w-72 font-bold  text-white"
+                  
+                    type='submit'
+                     className="block border-none bg-charcoalgray p-2 rounded-md mt-4 w-72 font-bold  text-white hover:bg-tomato  hover:shadow-lg"
                      >Subscribe to monthly newsletter</button>
+                    
                 </form>
             </div>
             </div>
